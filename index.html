@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rosé Atelier | Luxury Pink Cakes, Made to Order</title>
+<meta name="description" content="Rosé Atelier crafts luxury, premium pink cakes for birthdays, weddings and every celebration. Design your own cake and order online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+<!-- Preloader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__inner">
+    <div class="preloader__logo">Rosé <em>Atelier</em></div>
+    <svg class="preloader__cake" width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+      <rect x="14" y="34" width="36" height="16" rx="5" fill="#fff"/>
+      <rect x="20" y="22" width="24" height="14" rx="5" fill="#FFE4EC"/>
+      <circle cx="32" cy="15" r="4" fill="#C9A24A"/>
+      <path d="M14 42c6 4 10-4 18 0s12-4 18 0" stroke="#D6577F" stroke-width="2" fill="none"/>
+    </svg>
+    <div class="preloader__track"><span class="preloader__fill"></span></div>
+  </div>
+</div>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <div class="container header__inner">
+    <a href="#home" class="logo" aria-label="Rosé Atelier home">Rosé <em>Atelier</em></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#collection" class="nav-link">Collection</a>
+      <a href="#custom" class="nav-link">Design Yours</a>
+      <a href="#story" class="nav-link">Our Story</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+    <div class="header__actions">
+      <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <a href="#order" class="btn btn--small magnetic desktop-only">Order Now</a>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-panel" id="mobilePanel" aria-label="Mobile menu">
+  <a href="#collection" class="mobile-link">Collection</a>
+  <a href="#custom" class="mobile-link">Design Yours</a>
+  <a href="#story" class="mobile-link">Our Story</a>
+  <a href="#reviews" class="mobile-link">Reviews</a>
+  <a href="#gallery" class="mobile-link">Gallery</a>
+  <a href="#order" class="mobile-link">Order</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+</aside>
+
+<main>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero__media">
+    <img class="hero__img" src="images/hero-cake.jpg" alt="Two-tier pink luxury cake with gold leaf and roses, with Happy Birthday Ammad written on it" onerror="this.parentElement.classList.add('img-fallback')">
+    <div class="hero__overlay"></div>
+  </div>
+  <canvas class="petals" id="petalCanvas" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="hero__content">
+      <p class="eyebrow">Luxury Cake Atelier</p>
+      <h1 class="hero__title" id="heroTitle">Cakes as <span class="shimmer">beautiful</span> as the moment</h1>
+      <p class="hero__sub"><span class="typewriter" id="typewriter"></span></p>
+      <p class="hero__text">Hand-finished in blush pink and gold leaf, baked fresh with real butter, Belgian chocolate and rose water. Every cake is made to order.</p>
+      <div class="hero__buttons">
+        <a href="#collection" class="btn btn--primary magnetic">Shop the Collection <i class="arrow">→</i></a>
+        <a href="#custom" class="btn btn--ghost magnetic">Design Your Cake</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__badge" aria-hidden="true">Baked<br>fresh<br>daily</div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Birthday Cakes <i>✦</i> Wedding Cakes <i>✦</i> Custom Designs <i>✦</i> Macarons <i>✦</i> Cupcakes <i>✦</i> Gold Leaf <i>✦</i> Eggless Options <i>✦</i></span>
+    <span>Birthday Cakes <i>✦</i> Wedding Cakes <i>✦</i> Custom Designs <i>✦</i> Macarons <i>✦</i> Cupcakes <i>✦</i> Gold Leaf <i>✦</i> Eggless Options <i>✦</i></span>
+  </div>
+</div>
+
+<!-- Collection -->
+<section class="section" id="collection">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">The Collection</p>
+      <h2 class="section-title">Signature cakes</h2>
+      <div class="gold-line line-reveal"></div>
+    </div>
+
+    <div class="filters reveal" role="tablist" aria-label="Filter cakes">
+      <button class="filter-btn is-active" role="tab" aria-selected="true" data-filter="all" type="button">All</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="birthday" type="button">Birthday</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="wedding" type="button">Wedding</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="celebration" type="button">Celebration</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="mini" type="button">Minis</button>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+
+      <article class="product-card reveal" data-id="p1" data-name="Rose Petal Dream" data-price="6500" data-category="birthday">
+        <div class="product-card__img">
+          <img src="images/cake-1.jpg" alt="Rose Petal Dream cake" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <span class="fallback-emoji" aria-hidden="true">🎂</span>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="Save to favourites">♡</button>
+          <button class="quick-view-btn" type="button">Quick view</button>
+        </div>
+        <div class="product-card__body">
+          <h3>Rose Petal Dream</h3>
+          <p>Rose-water sponge, raspberry cream and sugar petals.</p>
+          <div class="product-card__foot"><span class="price">Rs. 6,500</span><button class="btn btn--small add-cart" type="button">Add to cart</button></div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-id="p2" data-name="Blush Velvet" data-price="7200" data-category="birthday">
+        <div class="product-card__img">
+          <img src="images/cake-2.jpg" alt="Blush Velvet cake" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <span class="fallback-emoji" aria-hidden="true">🍰</span>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="Save to favourites">♡</button>
+          <button class="quick-view-btn" type="button">Quick view</button>
+        </div>
+        <div class="product-card__body">
+          <h3>Blush Velvet</h3>
+          <p>Pink red velvet layers with silky cream cheese frosting.</p>
+          <div class="product-card__foot"><span class="price">Rs. 7,200</span><button class="btn btn--small add-cart" type="button">Add to cart</button></div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-id="p3" data-name="Pearl &amp; Peony Tier" data-price="18500" data-category="wedding">
+        <div class="product-card__img">
+          <img src="images/cake-3.jpg" alt="Pearl and Peony three-tier wedding cake" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <span class="fallback-emoji" aria-hidden="true">💍</span>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="Save to favourites">♡</button>
+          <button class="quick-view-btn" type="button">Quick view</button>
+        </div>
+        <div class="product-card__body">
+          <h3>Pearl &amp; Peony Tier</h3>
+          <p>Three-tier wedding cake with edible pearls and fresh peonies.</p>
+          <div class="product-card__foot"><span class="price">Rs. 18,500</span><button class="btn btn--small add-cart" type="button">Add to cart</button></div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-id="p4" data-name="Golden Hour" data-price="9800" data-category="celebration">
+        <div class="product-card__img">
+          <img src="images/cake-4.jpg" alt="Golden Hour cake with gold leaf" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <span class="fallback-emoji" aria-hidden="true">✨</span>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="Save to favourites">♡</button>
+          <button class="quick-view-btn" type="button">Quick view</button>
+        </div>
+        <div class="product-card__body">
+          <h3>Golden Hour</h3>
+          <p>Champagne sponge, salted caramel and 24k gold leaf.</p>
+          <div class="product-card__foot"><span class="price">Rs. 9,800</span><button class="btn btn--small add-cart" type="button">Add to cart</button></div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-id="p5" data-name="Strawberry Cloud" data-price="5800" data-category="celebration">
+        <div class="product-card__img">
+          <img src="images/cake-5.jpg" alt="Strawberry Cloud cake" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <span class="fallback-emoji" aria-hidden="true">🍓</span>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="Save to favourites">♡</button>
+          <button class="quick-view-btn" type="button">Quick view</button>
+        </div>
+        <div class="product-card__body">
+          <h3>Strawberry Cloud</h3>
+          <p>Light vanilla sponge, whipped cream and fresh strawberries.</p>
+          <div class="product-card__foot"><span class="price">Rs. 5,800</span><button class="btn btn--small add-cart" type="button">Add to cart</button></div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-id="p6" data-name="Macaron Tower" data-price="8400" data-category="celebration">
+        <div class="product-card__img">
+          <img src="images/cake-6.jpg" alt="Macaron Tower" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <span class="fallback-emoji" aria-hidden="true">🧁</span>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="Save to favourites">♡</button>
+          <button class="quick-view-btn" type="button">Quick view</button>
+        </div>
+        <div class="product-card__body">
+          <h3>Macaron Tower</h3>
+          <p>Forty-eight pastel macarons in rose, pistachio and vanilla.</p>
+          <div class="product-card__foot"><span class="price">Rs. 8,400</span><button class="btn btn--small add-cart" type="button">Add to cart</button></div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-id="p7" data-name="Petite Rose Box" data-price="3200" data-category="mini">
+        <div class="product-card__img">
+          <img src="images/cake-7.jpg" alt="Petite Rose Box of mini cakes" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <span class="fallback-emoji" aria-hidden="true">🌸</span>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="Save to favourites">♡</button>
+          <button class="quick-view-btn" type="button">Quick view</button>
+        </div>
+        <div class="product-card__body">
+          <h3>Petite Rose Box</h3>
+          <p>Six mini cakes with rose buttercream, packed in a gift box.</p>
+          <div class="product-card__foot"><span class="price">Rs. 3,200</span><button class="btn btn--small add-cart" type="button">Add to cart</button></div>
+        </div>
+      </article>
+
+      <article class="product-card reveal" data-id="p8" data-name="Pink Cupcake Dozen" data-price="2800" data-category="mini">
+        <div class="product-card__img">
+          <img src="images/cake-8.jpg" alt="Pink Cupcake Dozen" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+          <span class="fallback-emoji" aria-hidden="true">🧁</span>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="Save to favourites">♡</button>
+          <button class="quick-view-btn" type="button">Quick view</button>
+        </div>
+        <div class="product-card__body">
+          <h3>Pink Cupcake Dozen</h3>
+          <p>Twelve vanilla bean cupcakes with swirled blush frosting.</p>
+          <div class="product-card__foot"><span class="price">Rs. 2,800</span><button class="btn btn--small add-cart" type="button">Add to cart</button></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Custom builder -->
+<section class="section section--tint" id="custom">
+  <div class="container builder">
+    <div class="builder__form reveal">
+      <p class="eyebrow">Design Yours</p>
+      <h2 class="section-title">Build your own cake</h2>
+      <div class="gold-line line-reveal"></div>
+      <form id="builderForm" novalidate>
+        <div class="form-grid">
+          <label class="field"><span>Size</span>
+            <select id="bSize">
+              <option value="500" data-price="0">Small (6 in, serves 6)</option>
+              <option value="1000" data-price="1500" selected>Medium (8 in, serves 12)</option>
+              <option value="1500" data-price="3000">Large (10 in, serves 20)</option>
+            </select>
+          </label>
+          <label class="field"><span>Flavour</span>
+            <select id="bFlavour">
+              <option data-price="0">Vanilla Rose</option>
+              <option data-price="400">Belgian Chocolate</option>
+              <option data-price="400">Red Velvet</option>
+              <option data-price="600">Pistachio Rose</option>
+              <option data-price="300">Strawberry Cream</option>
+            </select>
+          </label>
+          <label class="field"><span>Layers</span>
+            <select id="bLayers">
+              <option value="0">2 layers</option>
+              <option value="800">3 layers</option>
+              <option value="1600">4 layers</option>
+            </select>
+          </label>
+          <label class="field"><span>Frosting colour</span>
+            <select id="bColour">
+              <option value="blush">Blush pink</option>
+              <option value="rose">Rose</option>
+              <option value="deep">Deep rose</option>
+              <option value="cream">Cream and gold</option>
+            </select>
+          </label>
+          <label class="field field--full"><span>Message on the cake <small id="msgCount">0/30</small></span>
+            <input type="text" id="bMessage" maxlength="30" placeholder="Happy Birthday Ammad" autocomplete="off">
+          </label>
+        </div>
+        <div class="builder__total"><span>Estimated total</span><strong id="builderTotal">Rs. 4,000</strong></div>
+        <button type="button" class="btn btn--primary" id="builderAdd">Add custom cake to cart <i class="arrow">→</i></button>
+      </form>
+    </div>
+
+    <div class="builder__preview reveal">
+      <div class="preview-card">
+        <div class="preview-cake" id="previewCake" aria-hidden="true">
+          <span class="topper">♥</span>
+          <span class="tier tier--top"></span>
+          <span class="tier tier--mid"></span>
+          <span class="tier tier--base"></span>
+          <span class="plate"></span>
+        </div>
+        <p class="preview-text" id="previewText">Your message appears here</p>
+        <p class="preview-meta" id="previewMeta"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="section" id="story">
+  <div class="container story">
+    <div class="story__text reveal">
+      <p class="eyebrow">Our Story</p>
+      <h2 class="section-title">Baked with love, finished by hand</h2>
+      <div class="gold-line line-reveal"></div>
+      <p>Born in a small kitchen with one oven and a big dream, Rosé Atelier began as birthday cakes for friends and family. Today every cake is still baked in small batches, decorated by hand and delivered with care.</p>
+      <p>We use real butter, Belgian chocolate, fresh fruit and rose water, with no shortcuts. Eggless and sugar-reduced options are always available on request.</p>
+    </div>
+    <div class="story__card reveal">
+      <div class="story__frame">
+        <span class="story__monogram">R<em>A</em></span>
+        <p>Pink, petal-soft<br>and made to order.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container counters">
+    <div class="counter reveal"><strong data-target="5200">0</strong><span>Cakes delivered</span></div>
+    <div class="counter reveal"><strong data-target="1800">0</strong><span>Happy clients</span></div>
+    <div class="counter reveal"><strong data-target="64">0</strong><span>Signature flavours</span></div>
+    <div class="counter reveal"><strong data-target="8">0</strong><span>Years of baking</span></div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section section--tint" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="section-title">From idea to celebration</h2>
+      <div class="gold-line line-reveal"></div>
+    </div>
+    <ol class="steps">
+      <li class="step reveal"><span class="step__num">01</span><h3>Choose</h3><p>Pick a signature cake or design your own with the builder.</p></li>
+      <li class="step reveal"><span class="step__num">02</span><h3>Confirm</h3><p>Send your enquiry with the date and we confirm within hours.</p></li>
+      <li class="step reveal"><span class="step__num">03</span><h3>We bake</h3><p>Your cake is baked fresh and decorated by hand the day before.</p></li>
+      <li class="step reveal"><span class="step__num">04</span><h3>Celebrate</h3><p>Delivered chilled and safe, or ready for pickup at the atelier.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Kind words</p>
+      <h2 class="section-title">Loved by our customers</h2>
+      <div class="gold-line line-reveal"></div>
+    </div>
+    <div class="testimonials reveal" id="testimonials">
+      <figure class="testimonial is-active">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>The cake looked like a work of art and tasted even better. Everyone asked where it was from.</blockquote>
+        <figcaption>Sara K., birthday cake</figcaption>
+      </figure>
+      <figure class="testimonial">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Our wedding tiers were perfect, soft pink with real peonies. Delivered on time and flawless.</blockquote>
+        <figcaption>Hira &amp; Daniyal, wedding cake</figcaption>
+      </figure>
+      <figure class="testimonial">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>I used the cake builder and the result matched the preview exactly. The rose pistachio is a must.</blockquote>
+        <figcaption>Maham R., custom cake</figcaption>
+      </figure>
+      <div class="dots" id="testimonialDots" role="tablist" aria-label="Choose review"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section section--tint" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Gallery</p>
+      <h2 class="section-title">A little sweetness to look at</h2>
+      <div class="gold-line line-reveal"></div>
+    </div>
+    <div class="masonry">
+      <button class="gal reveal gal--tall" type="button" data-src="images/hero-cake.jpg" data-caption="Happy Birthday Ammad, two-tier rose cake"><img src="images/hero-cake.jpg" alt="Two-tier pink cake with gold leaf" loading="lazy"></button>
+      <button class="gal reveal gal--g1" type="button" data-src="images/cake-1.jpg" data-caption="Rose Petal Dream"><img src="images/cake-1.jpg" alt="Rose Petal Dream" loading="lazy"></button>
+      <button class="gal reveal gal--g2" type="button" data-src="images/cake-3.jpg" data-caption="Pearl and Peony Tier"><img src="images/cake-3.jpg" alt="Pearl and Peony Tier" loading="lazy"></button>
+      <button class="gal reveal gal--g3" type="button" data-src="images/cake-6.jpg" data-caption="Macaron Tower"><img src="images/cake-6.jpg" alt="Macaron Tower" loading="lazy"></button>
+      <button class="gal reveal gal--g4" type="button" data-src="images/cake-4.jpg" data-caption="Golden Hour"><img src="images/cake-4.jpg" alt="Golden Hour" loading="lazy"></button>
+      <button class="gal reveal gal--g5" type="button" data-src="images/cake-5.jpg" data-caption="Strawberry Cloud"><img src="images/cake-5.jpg" alt="Strawberry Cloud" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<!-- Order -->
+<section class="section" id="order">
+  <div class="container order">
+    <div class="order__intro reveal">
+      <p class="eyebrow">Place an order</p>
+      <h2 class="section-title">Send your enquiry</h2>
+      <div class="gold-line line-reveal"></div>
+      <p>Tell us what you would like and the date you need it. We reply within a few hours to confirm design, price and delivery.</p>
+      <ul class="order__list">
+        <li>Orders open 7 days a week</li>
+        <li>48 hours notice for custom designs</li>
+        <li>Delivery across the city</li>
+      </ul>
+    </div>
+    <div class="order__panel reveal">
+      <form id="orderForm" novalidate>
+        <div class="form-grid">
+          <label class="field"><span>Full name</span><input type="text" id="oName" autocomplete="name" placeholder="Your name"><small class="error" id="oNameErr"></small></label>
+          <label class="field"><span>Phone</span><input type="tel" id="oPhone" autocomplete="tel" placeholder="03xx xxxxxxx"><small class="error" id="oPhoneErr"></small></label>
+          <label class="field"><span>Email</span><input type="email" id="oEmail" autocomplete="email" placeholder="you@example.com"><small class="error" id="oEmailErr"></small></label>
+          <label class="field"><span>Date needed</span><input type="date" id="oDate"><small class="error" id="oDateErr"></small></label>
+          <label class="field field--full"><span>Occasion</span>
+            <select id="oType"><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Corporate</option><option>Other</option></select>
+          </label>
+          <label class="field field--full"><span>Notes</span><textarea id="oNotes" rows="4" placeholder="Flavour, size, message on the cake..."></textarea></label>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send enquiry <i class="arrow">→</i></button>
+      </form>
+      <div class="order__success" id="orderSuccess" hidden>
+        <div class="tick">✓</div>
+        <h3>Thank you!</h3>
+        <p>Your enquiry is in. We will contact you shortly to confirm your cake.</p>
+        <button type="button" class="btn btn--ghost" id="orderAgain">Send another</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--tint" id="faq">
+  <div class="container faq">
+    <div class="section-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="section-title">Good to know</h2>
+      <div class="gold-line line-reveal"></div>
+    </div>
+    <div class="faq__list reveal">
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">Do you offer eggless cakes?<span class="faq__icon" aria-hidden="true">+</span></button>
+        <div class="faq__a"><p>Yes. Almost every cake can be made eggless at no extra charge. Just mention it in your notes.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">How far ahead should I order?<span class="faq__icon" aria-hidden="true">+</span></button>
+        <div class="faq__a"><p>Signature cakes need 24 hours. Custom and wedding cakes need at least 48 hours, and a week for large tiers.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">Can you write a custom message?<span class="faq__icon" aria-hidden="true">+</span></button>
+        <div class="faq__a"><p>Of course. Use the cake builder to preview your message of up to 30 characters, written in white or gold icing.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false">Do you deliver?<span class="faq__icon" aria-hidden="true">+</span></button>
+        <div class="faq__a"><p>We deliver across the city in chilled, secure boxes. Pickup from the atelier is also free.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="#home" class="logo logo--light">Rosé <em>Atelier</em></a>
+      <p>Luxury pink cakes, baked fresh and made to order.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="#collection">Collection</a>
+      <a href="#custom">Design Yours</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <p>Open daily, 10 AM to 9 PM<br>Made to order, pickup or delivery</p>
+    </div>
+  </div>
+  <p class="footer__copy">© 2026 Rosé Atelier. Portfolio demo project.</p>
+</footer>
+
+<!-- Cart drawer -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping cart">
+  <div class="cart-drawer__head">
+    <h3>Your cart</h3>
+    <button type="button" class="icon-btn" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <p class="cart-empty" id="cartEmpty">Your cart is empty. Add a cake you love!</p>
+  <ul class="cart-items" id="cartItems"></ul>
+  <div class="cart-drawer__foot">
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">Rs. 0</strong></div>
+    <button type="button" class="btn btn--primary btn--full" id="checkoutBtn">Send enquiry <i class="arrow">→</i></button>
+  </div>
+</aside>
+
+<!-- Quick view -->
+<div class="modal" id="quickModal" hidden>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="qvName">
+    <button type="button" class="icon-btn modal__close" id="quickClose" aria-label="Close">✕</button>
+    <h3 id="qvName"></h3>
+    <p id="qvDesc"></p>
+    <div class="modal__foot"><span class="price" id="qvPrice"></span><button type="button" class="btn btn--primary" id="qvAdd">Add to cart</button></div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="icon-btn lightbox__close" id="lightboxClose" aria-label="Close image">✕</button>
+  <figure>
+    <img id="lightboxImg" alt="">
+    <div class="lightbox__fallback" id="lightboxFallback" hidden>🎂</div>
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
